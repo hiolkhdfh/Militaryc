@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>ข้อมูลของเว็ปไซต์นี้</h1>
+<div class="top-buttons">
+  <a href="index.html" class="army-btn">หน้าหลัก</a>
+  <button id="modeToggle">สว่าง</button>
+</div>
+</header>
+
+<main>
+<section class="content">
+
+<div class="card">
+<h2>เกี่ยวกับเว็บไซต์</h2>
+<p>เว็บไซต์นี้รวบรวมข้อมูลยุทโธปกรณ์ทางทหารของแต่ละประเทศ พร้อมรายละเอียดชื่อรุ่น จำนวน ผู้ผลิต และราคาโดยประมาณ</p>
+</div>
+
+<div class="card">
+<h2>กฎสงครามของสหประชาชาติ ( ไม่มีไรก็แค่อยากเพิ่ม )</h2>
+<ul>
+<li>ห้ามโจมตีประชากรพลเรือนโดยตรง</li>
+<li>ต้องปฏิบัติตามข้อกำหนดระหว่างประเทศเกี่ยวกับอาวุธ</li>
+<li>ต้องเคารพสิทธิและความปลอดภัยของนักโทษสงคราม</li>
+<li>ต้องหลีกเลี่ยงการใช้วิธีการทำสงครามที่ก่อให้เกิดความเสียหายเกินจำเป็น</li>
+</ul>
+</div>
+
+<div class="back-button">
+<a href="index.html">กลับหน้าหลัก</a>
+</div>
+
+<div class="author">จัดทำโดย MaiddressCodeX</div>
+</section>
+</main>
+
+<footer>
+<p>จัดทำโดย <strong>MaiddressCodeX</strong> © 2025</p>
+</footer>
+
+<script>
+const toggle = document.getElementById('modeToggle');
+const savedMode = localStorage.getItem('darkMode');
+if(savedMode === 'dark'){
+  document.body.classList.add('dark');
+  toggle.textContent = 'มืด';
+} else { toggle.textContent = 'สว่าง'; }
+
+toggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+  if(document.body.classList.contains('dark')){
+    toggle.textContent = 'มืด';
+    localStorage.setItem('darkMode', 'dark');
+  } else {
+    toggle.textContent = 'สว่าง';
+    localStorage.setItem('darkMode', 'light');
+  }
+  toggle.classList.add('toggle-animate');
+  setTimeout(() => toggle.classList.remove('toggle-animate'), 300);
+});
+</script>
+<script>
+// 🎬 เพิ่มแอนิเมชันตอนโหลดหน้า
+document.body.classList.add('fade-in');
+
+// 🎬 เพิ่มเอฟเฟกต์ก่อนออกหน้า
+document.querySelectorAll('a').forEach(link => {
+  if (link.hostname === window.location.hostname) {
+    link.addEventListener('click', e => {
+      const url = link.getAttribute('href');
+      if (url && !url.startsWith('#')) {
+        e.preventDefault();
+        document.body.classList.add('fade-out');
+        setTimeout(() => window.location.href = url, 400);
+      }
+    });
+  }
+});
+</script>
+
+</body>
+</html>

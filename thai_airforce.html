@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>กองทัพอากาศไทย</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>กองทัพอากาศไทย</h1>
+<div class="top-buttons">
+  <a href="index.html" class="army-btn">หน้าหลัก</a>
+  <button id="modeToggle">สว่าง</button>
+</div>
+</header>
+
+<main>
+<section class="content">
+
+<div class="card">
+<h2>ภาพรวมกองทัพอากาศ</h2>
+<p>กองทัพอากาศไทยมีหน้าที่หลักในการป้องกันน่านฟ้า การสนับสนุนภารกิจของกองทัพบกและกองทัพเรือ และช่วยเหลือประชาชนในภาวะฉุกเฉิน</p>
+<ul>
+<li>งบประมาณ: ประมาณ 25,000 ล้านบาท/ปี</li>
+<li>จำนวนกำลังพล: ประมาณ 50,000 นาย</li>
+<li>ความสามารถโดยรวม: ปฏิบัติการทางอากาศ, สนับสนุนภารกิจภาคพื้น, การฝึกนักบินและบุคลากรทางอากาศ</li>
+</ul>
+</div>
+
+<div class="card">
+  <div class="column">
+    <div class="weapon-item">
+      <h3>เครื่องบินรบหลัก</h3>
+      <ul>
+        <li>รุ่น: F-16 Fighting Falcon</li>
+        <li>จำนวน: 80 ลำ</li>
+        <li>ผู้ผลิต: Lockheed Martin (สหรัฐ)</li>
+        <li>ราคาโดยประมาณ: 250 ล้านบาท/ลำ</li>
+      </ul>
+    </div>
+
+    <div class="weapon-item">
+      <h3>เครื่องบินขับไล่/ฝึก</h3>
+      <ul>
+        <li>รุ่น: T-50TH Golden Eagle</li>
+        <li>จำนวน: 30 ลำ</li>
+        <li>ผู้ผลิต: Korea Aerospace Industries (เกาหลีใต้)</li>
+        <li>ราคาโดยประมาณ: 180 ล้านบาท/ลำ</li>
+      </ul>
+    </div>
+
+    <div class="weapon-item">
+      <h3>เครื่องบินลำเลียง</h3>
+      <ul>
+        <li>รุ่น: C-130 Hercules</li>
+        <li>จำนวน: 15 ลำ</li>
+        <li>ผู้ผลิต: Lockheed Martin (สหรัฐ)</li>
+        <li>ราคาโดยประมาณ: 200 ล้านบาท/ลำ</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="weapon-item">
+      <h3>เฮลิคอปเตอร์สนับสนุน</h3>
+      <ul>
+        <li>รุ่น: UH-1H Huey</li>
+        <li>จำนวน: 40 ลำ</li>
+        <li>ผู้ผลิต: Bell Helicopter (สหรัฐ)</li>
+        <li>ราคาโดยประมาณ: 60 ล้านบาท/ลำ</li>
+      </ul>
+    </div>
+
+    <div class="weapon-item">
+      <h3>อาวุธบุคคลและระบบอากาศยาน</h3>
+      <ul>
+        <li>รุ่น: M16, M4 สำหรับหน่วยอากาศยาน</li>
+        <li>จำนวน: หลายพันกระบอก</li>
+        <li>ผู้ผลิต: Colt (สหรัฐ)</li>
+        <li>ราคาโดยประมาณ: 50,000 - 80,000 บาท/กระบอก</li>
+      </ul>
+    </div>
+
+    <div class="weapon-item">
+      <h3>อุปกรณ์สื่อสารและเรดาร์</h3>
+      <ul>
+        <li>รวมเรดาร์, ระบบควบคุมทางอากาศ, และดาวเทียมสื่อสาร</li>
+        <li>ผู้ผลิต: หลายบริษัท</li>
+        <li>ราคาโดยประมาณ: ตามชนิดและปริมาณ</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="back-button">
+<a href="index.html" class="airforce-btn">กลับหน้าหลัก</a>
+</div>
+
+<div class="author">จัดทำโดย MaiddressCodeX</div>
+</section>
+</main>
+
+<footer>
+<p>จัดทำโดย <strong>MaiddressCodeX</strong> © 2025</p>
+</footer>
+
+<script>
+const toggle = document.getElementById('modeToggle');
+const savedMode = localStorage.getItem('darkMode');
+if(savedMode === 'dark'){
+  document.body.classList.add('dark');
+  toggle.textContent = 'มืด';
+} else { toggle.textContent = 'สว่าง'; }
+
+toggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+  if(document.body.classList.contains('dark')){
+    toggle.textContent = 'มืด';
+    localStorage.setItem('darkMode', 'dark');
+  } else {
+    toggle.textContent = 'สว่าง';
+    localStorage.setItem('darkMode', 'light');
+  }
+  toggle.classList.add('toggle-animate');
+  setTimeout(() => toggle.classList.remove('toggle-animate'), 300);
+});
+</script>
+<script>
+// 🎬 เพิ่มแอนิเมชันตอนโหลดหน้า
+document.body.classList.add('fade-in');
+
+// 🎬 เพิ่มเอฟเฟกต์ก่อนออกหน้า
+document.querySelectorAll('a').forEach(link => {
+  if (link.hostname === window.location.hostname) {
+    link.addEventListener('click', e => {
+      const url = link.getAttribute('href');
+      if (url && !url.startsWith('#')) {
+        e.preventDefault();
+        document.body.classList.add('fade-out');
+        setTimeout(() => window.location.href = url, 400);
+      }
+    });
+  }
+});
+</script>
+
+</body>
+</html>

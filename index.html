@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>เว็บไซต์ยุทโธปกรณ์ทางทหาร</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>เว็บไซต์ยุทโธปกรณ์ทางทหาร 🇺🇳</h1>
+<div class="top-buttons">
+  <a href="home.html" class="army-btn">ข้อมูลเว็ปไซต์</a>
+  <button id="modeToggle">สว่าง</button>
+</div>
+</header>
+
+<main>
+<section class="content">
+
+<!-- ประเทศไทย -->
+<div class="country-box">
+<h2>ไทย (ทำแล้วอ้าย)</h2>
+<div class="army-buttons">
+  <a href="thai_army.html" class="army-btn">กองทัพบก</a>
+  <a href="thai_navy.html" class="army-btn">กองทัพเรือ</a>
+  <a href="thai_airforce.html" class="army-btn">กองทัพอากาศ</a>
+  <a href="thai_special.html" class="army-btn">หน่วยรบพิเศษ</a>
+</div>
+</div>
+
+<!-- อเมริกา -->
+<div class="country-box">
+<h2>อเมริกา (ยังไอห่า)</h2>
+<div class="army-buttons">
+  <a href="#" class="army-btn">กองทัพบก</a>
+  <a href="#" class="army-btn">กองทัพเรือ</a>
+  <a href="#" class="army-btn">กองทัพอากาศ</a>
+  <a href="#" class="army-btn">หน่วยรบพิเศษ</a>
+</div>
+</div>
+
+<!-- จีน -->
+<div class="country-box">
+<h2>จีน (ยังไอห่า)</h2>
+<div class="army-buttons">
+  <a href="#" class="army-btn">กองทัพบก</a>
+  <a href="#" class="army-btn">กองทัพเรือ</a>
+  <a href="#" class="army-btn">กองทัพอากาศ</a>
+  <a href="#" class="army-btn">หน่วยรบพิเศษ</a>
+</div>
+</div>
+
+<!-- รัสเซีย -->
+<div class="country-box">
+<h2>รัสเซีย (ยังไอห่า)</h2>
+<div class="army-buttons">
+  <a href="#" class="army-btn">กองทัพบก</a>
+  <a href="#" class="army-btn">กองทัพเรือ</a>
+  <a href="#" class="army-btn">กองทัพอากาศ</a>
+  <a href="#" class="army-btn">หน่วยรบพิเศษ</a>
+</div>
+</div>
+
+<!-- อังกฤษ -->
+<div class="country-box">
+<h2>อังกฤษ (ยังไอห่า)</h2>
+<div class="army-buttons">
+  <a href="#" class="army-btn">กองทัพบก</a>
+  <a href="#" class="army-btn">กองทัพเรือ</a>
+  <a href="#" class="army-btn">กองทัพอากาศ</a>
+  <a href="#" class="army-btn">หน่วยรบพิเศษ</a>
+</div>
+</div>
+
+<!-- เยอรมัน -->
+<div class="country-box">
+<h2>เยอรมัน (ยังไอห่า)</h2>
+<div class="army-buttons">
+  <a href="#" class="army-btn">กองทัพบก</a>
+  <a href="#" class="army-btn">กองทัพเรือ</a>
+  <a href="#" class="army-btn">กองทัพอากาศ</a>
+  <a href="#" class="army-btn">หน่วยรบพิเศษ</a>
+</div>
+</div>
+
+<!-- ฝรั่งเศส -->
+<div class="country-box">
+<h2>ฝรั่งเศส (ยังไอห่า)</h2>
+<div class="army-buttons">
+  <a href="#" class="army-btn">กองทัพบก</a>
+  <a href="#" class="army-btn">กองทัพเรือ</a>
+  <a href="#" class="army-btn">กองทัพอากาศ</a>
+  <a href="#" class="army-btn">หน่วยรบพิเศษ</a>
+</div>
+</div>
+
+<div class="author">จัดทำโดย MaiddressCodeX</div>
+</section>
+</main>
+
+<footer>
+<p>จัดทำโดย <strong>MaiddressCodeX</strong> © 2025</p>
+</footer>
+
+<script>
+const toggle = document.getElementById('modeToggle');
+const savedMode = localStorage.getItem('darkMode');
+if(savedMode === 'dark'){
+  document.body.classList.add('dark');
+  toggle.textContent = 'มืด';
+} else { toggle.textContent = 'สว่าง'; }
+
+toggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+  if(document.body.classList.contains('dark')){
+    toggle.textContent = 'มืด';
+    localStorage.setItem('darkMode', 'dark');
+  } else {
+    toggle.textContent = 'สว่าง';
+    localStorage.setItem('darkMode', 'light');
+  }
+  toggle.classList.add('toggle-animate');
+  setTimeout(() => toggle.classList.remove('toggle-animate'), 300);
+});
+</script>
+<script>
+// 🎬 เพิ่มแอนิเมชันตอนโหลดหน้า
+document.body.classList.add('fade-in');
+
+// 🎬 เพิ่มเอฟเฟกต์ก่อนออกหน้า
+document.querySelectorAll('a').forEach(link => {
+  if (link.hostname === window.location.hostname) {
+    link.addEventListener('click', e => {
+      const url = link.getAttribute('href');
+      if (url && !url.startsWith('#')) {
+        e.preventDefault();
+        document.body.classList.add('fade-out');
+        setTimeout(() => window.location.href = url, 400);
+      }
+    });
+  }
+});
+</script>
+
+</body>
+</html>
